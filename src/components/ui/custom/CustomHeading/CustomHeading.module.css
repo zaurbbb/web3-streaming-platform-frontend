@@ -1,0 +1,24 @@
+.Block {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: "GilroyBold", sans-serif;
+  padding: 3rem 0 1.5rem 0;
+}
+
+@media (max-width: 992px) {
+  .Block {
+    gap: 1rem;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=CustomHeading.module.css.map */

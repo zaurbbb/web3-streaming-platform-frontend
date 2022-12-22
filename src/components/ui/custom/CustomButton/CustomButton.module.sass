@@ -1,0 +1,34 @@
+@import '../../../../variables'
+
+$buttonColor: #59DBF7
+
+.Button
+  border: none
+  border-radius: 50px
+
+  font-size: $fs4
+  box-shadow: none
+  text-transform: none
+  transition: all .2s ease
+  font-family: $gilroyBold
+  line-height: 49.52px
+
+.Filled
+  color: white
+  background-color: $buttonColor
+  &:hover
+    background-color: $poison
+
+.Unfilled
+  color: $buttonColor
+  background-color: white
+  border: 2px solid $buttonColor
+  &:hover
+    color: $poison
+
+//.BigButton
+//
+//.RegularButton
+
+.SmallButton
+  padding: 0.2rem 1rem

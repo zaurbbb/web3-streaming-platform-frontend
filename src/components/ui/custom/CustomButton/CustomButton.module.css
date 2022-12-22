@@ -1,0 +1,33 @@
+.Button {
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  box-shadow: none;
+  text-transform: none;
+  transition: all 0.2s ease;
+  font-family: "GilroyBold", sans-serif;
+  line-height: 49.52px;
+}
+
+.Filled {
+  color: white;
+  background-color: #59DBF7;
+}
+.Filled:hover {
+  background-color: #00D2FF;
+}
+
+.Unfilled {
+  color: #59DBF7;
+  background-color: white;
+  border: 2px solid #59DBF7;
+}
+.Unfilled:hover {
+  color: #00D2FF;
+}
+
+.SmallButton {
+  padding: 0.2rem 1rem;
+}
+
+/*# sourceMappingURL=CustomButton.module.css.map */

@@ -1,0 +1,19 @@
+@import "../../../../variables"
+
+.Block
+  @include flex(row, 0)
+  @include flexAlignment(flex-start, space-between, center)
+
+  width: 100%
+
+  font-family: $gilroyBold
+  padding: 3rem 0 1.5rem 0
+
+@media (max-width: $lg)
+  .Block
+    gap: 1rem
+    @include flexAlignment(flex-start, center, center)
+
+    padding: 1.5rem 0
+
+    text-align: center
