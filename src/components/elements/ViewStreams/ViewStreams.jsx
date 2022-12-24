@@ -5,6 +5,7 @@ import React, {
 import API from '../../../api';
 import css from './ViewStreams.module.scss';
 import StreamCard from '../StreamCard/StreamCard';
+import ThreeDotsLoader from '../../ui/loaders/ThreeDotsLoader/ThreeDotsLoader';
 
 const ViewAllStreams = () => {
     const [streams, setStreams] = useState([]);
@@ -22,6 +23,11 @@ const ViewAllStreams = () => {
 
         fetchData().then();
     }, []);
+
+
+    if (streams.length === 0) {
+        return <ThreeDotsLoader/>
+    }
 
     if (error) {
         return <h1>{error}</h1>

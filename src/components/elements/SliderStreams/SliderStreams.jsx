@@ -13,6 +13,7 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper';
 import API from '../../../api';
 import StreamCard from '../StreamCard/StreamCard';
+import ThreeDotsLoader from '../../ui/loaders/ThreeDotsLoader/ThreeDotsLoader';
 
 const SliderStreams = () => {
 
@@ -31,6 +32,10 @@ const SliderStreams = () => {
 
         fetchData().then();
     }, []);
+
+    if (streams.length === 0) {
+        return <ThreeDotsLoader/>
+    }
 
     if (streams.length > 0) {
         for (let i = 0; i < 4; i++) {

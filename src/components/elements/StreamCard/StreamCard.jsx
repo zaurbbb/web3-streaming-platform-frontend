@@ -4,13 +4,14 @@ import css from './StreamCard.module.scss';
 import { useRandomName } from '../../../hooks/useRandonName';
 import { ReactComponent as VisibleIcon } from '../../../assets/svg/VisibleIcon.svg';
 import { useRandomPoster } from '../../../hooks/useRandomPoster';
+import { Link } from 'react-router-dom';
 
 const StreamCard = ({ streamName, streamCategory, streamId, streamDescription, authorAddress }) => {
     const randomName = useRandomName();
     const randomPoster = useRandomPoster();
 
     return (
-        <article className={css.CardBlock}>
+        <Link to={`/viewStream/${streamId}`} className={css.CardBlock}>
             <img
                 src={randomPoster}
                 alt='poster of stream'
@@ -28,7 +29,7 @@ const StreamCard = ({ streamName, streamCategory, streamId, streamDescription, a
                     <VisibleIcon /> 123456
                 </div>
             </div>
-        </article>
+        </Link>
     );
 };
 

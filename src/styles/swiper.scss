@@ -23,11 +23,11 @@
 .swiper-slide {
   height: 10rem;
 
-  article {
+  a {
     width: 100%;
   }
   &-active {
-    article {
+    a {
       transform: scale(1.2);
     }
   }
