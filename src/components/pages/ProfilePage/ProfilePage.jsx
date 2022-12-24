@@ -15,7 +15,7 @@ const ProfilePage = () => {
     useEffect(() => {
         async function fetchData() {
             const resBalance = await API.get(`/token/balanceOfAddress/${localStorage.getItem('address')}`);
-            setUserBalance(resBalance.data.balance * 0.1 ** 12);
+            setUserBalance(resBalance.data.balance / 10 ** 18);
         }
 
         fetchData()
@@ -25,8 +25,9 @@ const ProfilePage = () => {
             });
     }, []);
 
-
-    if (!userBalance) {
+    if (error) {
+        return <h1>{error.message}</h1>
+    } else if (!userBalance && userBalance !== 0) {
         return (
             <section className={css.ContainerBlock}>
                 <ThreeDotsLoader />
