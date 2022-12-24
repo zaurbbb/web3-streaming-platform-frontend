@@ -8,13 +8,11 @@ import {
     Badge,
     Button
 } from '@mui/material';
-import { ReactComponent as NotificationIcon } from '../../../../assets/svg/NotificationIcon.svg';
 import { ReactComponent as PlusIcon } from '../../../../assets/svg/PlusIcon.svg';
 import MetaMaskLogo from '../../../../assets/webp/metamask-2728406-2261817.webp'
 import api from "../../../../api";
 import ThreeDotsLoader from "../../../ui/loaders/ThreeDotsLoader/ThreeDotsLoader";
 import DoneIcon from '@mui/icons-material/Done';
-import SnackbarWindow from '../../../ui/windows/SnackbarWindow/SnackbarWindow';
 
 const RightBlock = () => {
     const [userAccount, setUserAccount] = useState('');
@@ -84,17 +82,6 @@ const RightBlock = () => {
         }
     }
 
-    const [openSnackbar, setOpenSnackbar] = useState(false);
-    const handleClickSnackbar = () => {
-        setOpenSnackbar(true);
-    };
-
-    const handleCloseSnackbar = (event, reason) => {
-        if (reason === 'clickaway') return;
-
-        setOpenSnackbar(false);
-    };
-
 
     return (
         <div className={css.ContainerBlock}>
@@ -104,7 +91,6 @@ const RightBlock = () => {
                     color="primary"
                     onClick={() => {
                         handleClaim();
-                        handleClickSnackbar();
                     }}
                     style={{ cursor: 'pointer' }}
                 >
@@ -138,14 +124,6 @@ const RightBlock = () => {
                     />
                 </Link>
             }
-
-            <SnackbarWindow
-                openSnackbar={openSnackbar}
-                handleCloseSnackbar={handleCloseSnackbar}
-                text={'You have not enough time to claim'}
-                severity='warning'
-                link='https://www.google.com'
-            />
         </div>
     );
 };
