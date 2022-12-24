@@ -18,7 +18,7 @@ const ProfilePage = () => {
     useEffect(() => {
         async function fetchData() {
             const resBalance = await API.get(`/token/balanceOfAddress/${walletAddress}`);
-            setUserBalance(resBalance.data.balance * 0.1 ** 18);
+            setUserBalance(resBalance.data.balance / 10 ** 18);
         }
 
         fetchData()
@@ -26,8 +26,7 @@ const ProfilePage = () => {
             .catch(error => {
                 setError(error);
             });
-    }, []);
-
+    }, [walletAddress]);
 
     function handleAddressVisible() {
         if (isAddressVisible === false) {
@@ -38,16 +37,14 @@ const ProfilePage = () => {
         }
     }
 
-    if (!userBalance) {
+    if (error) {
+        return <h1>{error.message}</h1>
+    } else if (!userBalance && userBalance !== 0) {
         return (
             <section className={css.ContainerBlock}>
                 <ThreeDotsLoader />
             </section>
         )
-    }
-
-    if (error) {
-        return <h1>{error}</h1>
     }
 
     return (
