@@ -1,4 +1,5 @@
 import React, {
+    useContext,
     useEffect,
     useState
 } from 'react';
@@ -10,8 +11,9 @@ import {
 } from '@mui/material';
 import NotificationIcon from '../../../../assets/svg/NotificationIcon.svg';
 import PlusIcon from '../../../../assets/svg/PlusIcon.svg';
+import {AddressContext} from "../../../../context";
 
-const RightBlock = () => {
+const RightBlock = (key, value) => {
     const [userAccount, setUserAccount] = useState('');
 
     let eth;
@@ -29,6 +31,7 @@ const RightBlock = () => {
             // access the account
             const acc = await metamask.request({ method: 'eth_requestAccounts' });
             setUserAccount(acc[0]);
+            localStorage.setItem('address', acc[0]);
             window.location.reload();
         } catch (error) {
             console.log(error);
@@ -46,6 +49,8 @@ const RightBlock = () => {
                 const acc = await metamask.request({ method: 'eth_accounts' })
                 if (acc.length) {
                     setUserAccount(acc[0])
+                } else {
+                    localStorage.removeItem('address');
                 }
             } catch (error) {
                 console.log(error);

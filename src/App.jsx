@@ -1,16 +1,10 @@
-import {
-    BrowserRouter,
-    Route,
-    Routes
-} from 'react-router-dom';
-import {
-    createReactClient,
-    studioProvider,
-} from '@livepeer/react';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {LivepeerConfig, createReactClient, studioProvider} from '@livepeer/react';
 import Header from './components/elements/Header/Header';
 import Footer from './components/elements/Footer/Footer';
-import { publicRoutes } from './router/routes';
-import Sidebar from './components/elements/Sidebar/Sidebar';
+import {publicRoutes} from './router/routes';
+import {useEffect, useState} from "react";
+import {AddressContext} from "./context";
 
 const livePeerClient = createReactClient({
     provider: studioProvider({
@@ -22,9 +16,8 @@ const livePeerClient = createReactClient({
 function App() {
     return (
         <BrowserRouter>
-            {/*<LivepeerConfig client={livePeerClient}>*/}
+            <LivepeerConfig client={livePeerClient}>
             <Header />
-            <Sidebar />
             <main>
                 <Routes>
                     {publicRoutes.map(route =>
@@ -38,7 +31,7 @@ function App() {
                 {/*<AppRouter />*/}
             </main>
             <Footer />
-            {/*</LivepeerConfig>*/}
+            </LivepeerConfig>
         </BrowserRouter>
     );
 }
