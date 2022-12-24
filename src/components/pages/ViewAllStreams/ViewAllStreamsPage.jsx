@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {useStream} from "@livepeer/react";
 import api from "../../../api";
 
 const ViewAllStreamsPage = () => {
