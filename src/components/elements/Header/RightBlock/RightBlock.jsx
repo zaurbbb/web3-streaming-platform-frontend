@@ -58,6 +58,7 @@ const RightBlock = () => {
 
     return (
         <div className={css.ContainerBlock}>
+            <Link to='/createStream'>
             <Badge
                 variant='dot'
                 color='primary'
@@ -67,12 +68,15 @@ const RightBlock = () => {
                     alt='notification icon'
                 />
             </Badge>
-            <Badge>
-                <img
-                    src={PlusIcon}
-                    alt='notification icon'
-                />
-            </Badge>
+            </Link>
+            <Link to='/createStream'>
+                <Badge>
+                    <img
+                        src={PlusIcon}
+                        alt='notification icon'
+                    />
+                </Badge>
+            </Link>
             <div className={css.AuthBlock}>
                 {
                     userAccount ? <div>

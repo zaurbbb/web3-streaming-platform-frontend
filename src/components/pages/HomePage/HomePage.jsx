@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MainPage = () => {
+const HomePage = () => {
     return (
         <section>
             Main Page
@@ -8,4 +8,4 @@ const MainPage = () => {
     );
 };
 
-export default MainPage;
+export default HomePage;
