@@ -1,0 +1,38 @@
+.Block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0;
+  background-color: #121212;
+  color: white;
+  overflow: visible;
+}
+.Block a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.Block svg {
+  width: 1.8rem;
+}
+
+.Content {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Button {
+  height: 50px;
+  width: 2.8rem;
+  border-radius: 3px;
+  background-color: #cc2463;
+  color: white;
+}
+
+/*# sourceMappingURL=Sidebar.module.css.map */

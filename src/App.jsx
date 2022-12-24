@@ -10,6 +10,7 @@ import {
 import Header from './components/elements/Header/Header';
 import Footer from './components/elements/Footer/Footer';
 import { publicRoutes } from './router/routes';
+import Sidebar from './components/elements/Sidebar/Sidebar';
 
 const livePeerClient = createReactClient({
     provider: studioProvider({
@@ -20,24 +21,25 @@ const livePeerClient = createReactClient({
 
 function App() {
     return (
-    <BrowserRouter>
-        {/*<LivepeerConfig client={livePeerClient}>*/}
+        <BrowserRouter>
+            {/*<LivepeerConfig client={livePeerClient}>*/}
             <Header />
+            <Sidebar />
             <main>
                 <Routes>
-                {publicRoutes.map(route =>
-                    <Route
-                        key={route.id}
-                        element={route.component}
-                        path={route.path}
-                    />
-                )}
+                    {publicRoutes.map(route =>
+                        <Route
+                            key={route.id}
+                            element={route.component}
+                            path={route.path}
+                        />
+                    )}
                 </Routes>
                 {/*<AppRouter />*/}
             </main>
             <Footer />
-        {/*</LivepeerConfig>*/}
-    </BrowserRouter>
+            {/*</LivepeerConfig>*/}
+        </BrowserRouter>
     );
 }
 
