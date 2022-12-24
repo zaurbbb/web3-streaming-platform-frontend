@@ -13,10 +13,12 @@ import MetaMaskLogo from '../../../../assets/webp/metamask-2728406-2261817.webp'
 import api from "../../../../api";
 import ThreeDotsLoader from "../../../ui/loaders/ThreeDotsLoader/ThreeDotsLoader";
 import DoneIcon from '@mui/icons-material/Done';
+import SnackbarWindow from "../../../ui/windows/SnackbarWindow/SnackbarWindow";
 
 const RightBlock = () => {
     const [userAccount, setUserAccount] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const link = 'https://testnets.opensea.io/' + localStorage.getItem('address');
 
     let eth;
 
@@ -44,7 +46,6 @@ const RightBlock = () => {
     useEffect(() => {
         const checkWalletConnect = async (metamask = eth) => {
             try {
-                // check if metamask is installed
                 if (!metamask) {
                     return alert('please install metamask to continue')
                 }
@@ -66,11 +67,22 @@ const RightBlock = () => {
 
     const handleClaim = () => {
         setIsLoading(true);
-        if (Math.round(+localStorage.getItem('time')) >= 1) {
+        const count = Math.round(+localStorage.getItem('time'));
+        if (count >= 1) {
             api.post('/token/transferTo', {
                 address: localStorage.getItem('address'),
                 amount : Math.round(+localStorage.getItem('time'))
             }).then(r => {
+                if (count >= 5) {
+                    api.post('/nft/mintSoulBound', {
+                        address: localStorage.getItem('address'),
+                        type: 'time'
+                    }).then(res => {
+                        handleClickSnackbar();
+                    }).catch(e => {
+                        console.log(e);
+                    })
+                }
                 localStorage.removeItem('time');
                 setIsLoading(false);
             }).catch(err => {
@@ -82,6 +94,16 @@ const RightBlock = () => {
         }
     }
 
+    const [openSnackbar, setOpenSnackbar] = useState(false);
+    const handleClickSnackbar = () => {
+        setOpenSnackbar(true);
+    };
+
+    const handleCloseSnackbar = (event, reason) => {
+        if (reason === 'clickaway') return;
+
+        setOpenSnackbar(false);
+    };
 
     return (
         <div className={css.ContainerBlock}>
@@ -124,6 +146,13 @@ const RightBlock = () => {
                     />
                 </Link>
             }
+            <SnackbarWindow
+                openSnackbar={openSnackbar}
+                handleCloseSnackbar={handleCloseSnackbar}
+                text={'Congratulations! You have received an achievement for spending time with us. Click on me to see it'}
+                severity='success'
+                link={link}
+            />
         </div>
     );
 };

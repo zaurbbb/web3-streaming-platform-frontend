@@ -15,7 +15,7 @@ const CreateStreamPage = () => {
     const [streamName, setStreamName] = useState('');
     const [streamCategory, setStreamCategory] = useState('');
     const [streamDescription, setStreamDescription] = useState('');
-    const link = 'https://testnets.opensea.io/0x84A55169700D4A933fb026Ca7480fDE9545CB7f6';
+    const link = 'https://testnets.opensea.io/' + localStorage.getItem('address');
     let count = 0;
 
     const {
@@ -39,7 +39,6 @@ const CreateStreamPage = () => {
                 address: localStorage.getItem('address'),
                 type: 'streaming'
             }).then(res => {
-                console.log(res.data);
                 handleClickSnackbar();
             }).catch(e => console.log(e));
         }).catch(e => {
