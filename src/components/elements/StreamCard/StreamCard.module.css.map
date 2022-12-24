@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["StreamCard.module.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EAEA;;AACA;EACE;EAEA;EACA","file":"StreamCard.module.css"}
+{"version":3,"sourceRoot":"","sources":["StreamCard.module.scss","../../../variables.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAGF;EAAK;;;AAGP;EACE;EACA;;;AAGF;EACE;EACA;EACA;EAEA,WCtBI;;ADuBJ;EAAM;;;AAGR;EACE,OClBe;;ADoBf;EACE;;AACA;EACE,MCvBW","file":"StreamCard.module.css"}

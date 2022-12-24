@@ -9,6 +9,7 @@ export const theme = createTheme({
             xl: 1200,
         },
     },
+
     palette: {
         primary: {
             main: '#DF1F50',
@@ -22,15 +23,22 @@ export const theme = createTheme({
             light: '#18181B',
             main: '#121212',
         },
-},
+    },
+
     components: {
         MuiButton: {
             styleOverrides: {
                 root: {
                     textTransform: 'none',
                     boxShadow: 'none',
+                    color: 'palette',
+                    border: 'palette',
+                    ':disabled': {
+                        color: '#7B7B83',
+                        border: '#7B7B83',
+                    }
                 },
-            }
+            },
         },
     },
     typography: {

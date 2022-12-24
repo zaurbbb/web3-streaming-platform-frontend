@@ -1,4 +1,4 @@
-import { namesList } from '../list/list';
+import { namesList } from '../list';
 
 export const useRandomName = () => {
     const randomIndex = Math.floor(Math.random() * namesList.length);

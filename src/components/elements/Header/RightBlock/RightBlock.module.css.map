@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["RightBlock.module.scss","../../../../variables.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;EACA;EAEA;EACA,WCHI;;ADMJ;EACE;EACA;;AAGF;EACE;;AACA;EACE,MCLW;;ADSf;EACE;EACA;;;AAKJ;EACE;EACA;EACA;EAEA","file":"RightBlock.module.css"}
+{"version":3,"sourceRoot":"","sources":["RightBlock.module.scss","../../../../variables.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;EACA;EAEA;EACA,WCHI;;ADMJ;EACE;EACA;EACA;;AAGF;EACE;;AACA;EACE,MCNW;;ADUf;EACE;EACA;;;AAKJ;EACE;EACA;EACA;EAEA","file":"RightBlock.module.css"}

@@ -9,7 +9,7 @@
   width: 10rem;
   height: 10rem;
 }
-.ContainerBlock h1 {
+.ContainerBlock h3 {
   display: flex;
   align-items: center;
   gap: 15px;

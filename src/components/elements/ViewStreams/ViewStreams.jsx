@@ -5,10 +5,10 @@ import React, {
 import API from '../../../api';
 import css from './ViewStreams.module.scss';
 import StreamCard from '../StreamCard/StreamCard';
-import ThreeDotsLoader from '../../ui/loaders/ThreeDotsLoader/ThreeDotsLoader';
 
 const ViewAllStreams = () => {
     const [streams, setStreams] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -16,16 +16,17 @@ const ViewAllStreams = () => {
                 const res = await API.get('/ipfs/getStreams');
                 setStreams(res.data);
             } catch (e) {
-                console.log(e)
+                setError(e);
             }
         }
 
         fetchData().then();
     }, []);
 
-    if (!streams) {
-        return <h1>LOADING</h1>
+    if (error) {
+        return <h1>{error}</h1>
     }
+
     return (
         <section className={css.ContainerBlock}>
             {streams.map(stream => {

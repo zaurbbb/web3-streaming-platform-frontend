@@ -9,6 +9,7 @@
 .ContainerBlock a {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .ContainerBlock svg {
   width: 1.4rem;

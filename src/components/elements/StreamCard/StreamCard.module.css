@@ -1,12 +1,42 @@
 .CardBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 14rem;
   color: white;
-  width: 16rem;
-  border: 1px solid red;
 }
 .CardBlock img {
   width: 100%;
   object-fit: contain;
   border-radius: 12px;
+}
+.CardBlock h5 {
+  font-weight: 100;
+}
+
+.LowerBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.StreamerInfo, .WatchersInfo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.694rem;
+}
+.StreamerInfo img, .WatchersInfo img {
+  width: 1rem;
+}
+
+.WatchersInfo {
+  color: #7B7B83;
+}
+.WatchersInfo svg {
+  width: 20px;
+}
+.WatchersInfo svg path {
+  fill: #7B7B83;
 }
 
 /*# sourceMappingURL=StreamCard.module.css.map */

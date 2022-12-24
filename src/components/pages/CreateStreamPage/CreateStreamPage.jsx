@@ -41,26 +41,25 @@ const CreateStreamPage = () => {
 
     return (
         <section className={css.ContainerBlock}>
-            {!stream ? <>
-                <input
-                    style={{ backgroundColor: 'white' }}
-                    type='text'
-                    placeholder='Stream name'
-                    onChange={(e) => setStreamName(e.target.value)}
-                />
-                <input
-                    style={{ backgroundColor: 'white' }}
-                    type='text'
-                    placeholder='Description'
-                    onChange={(e) => setStreamDescription(e.target.value)}
-                />
-                <input
-                    style={{ backgroundColor: 'white' }}
-                    type='text'
-                    placeholder='Category'
-                    onChange={(e) => setStreamCategory(e.target.value)}
-                />
-            </> : <h1>Stream name: {streamName} | Stream category: {streamCategory} <br/> Stream description: {streamDescription} </h1>}
+            {!stream ?
+                <>
+                    <input
+                        type='text'
+                        placeholder='Stream name'
+                        onChange={(e) => setStreamName(e.target.value)}
+                    />
+                    <input
+                        type='text'
+                        placeholder='Description'
+                        onChange={(e) => setStreamDescription(e.target.value)}
+                    />
+                    <input
+                        type='text'
+                        placeholder='Category'
+                        onChange={(e) => setStreamCategory(e.target.value)}
+                    />
+                </> : <h1>Stream name: {streamName} | Stream category: {streamCategory} <br /> Stream
+                    description: {streamDescription} </h1>}
 
             {stream && <div>Stream Key: {stream.streamKey}</div>}
             {stream?.playbackId && (
@@ -75,12 +74,12 @@ const CreateStreamPage = () => {
             <div>
                 {!stream && (
                     <Button
-                        style={{ backgroundColor: 'white' }}
                         onClick={() => {
                             createStream?.();
                         }}
                         disabled={isLoading || !createStream}
-                        variant='primary'
+                        variant='outlined'
+                        color='primary'
                     >
                         Create Stream
                     </Button>
