@@ -1,0 +1,14 @@
+.ContainerBlock a {
+  transition: all 0.2s;
+}
+.ContainerBlock a:hover {
+  background-color: #DF1F50;
+}
+
+.SearchInput {
+  width: 14rem;
+  height: 1.6rem;
+  padding: 0 15px;
+}
+
+/*# sourceMappingURL=SearchBar.module.css.map */

@@ -1,0 +1,13 @@
+@import '../../../../variables';
+
+.ContainerBlock {
+  display: flex;
+  gap: 1rem;
+
+  a {
+    text-transform: uppercase;
+    color: white;
+    font-size: $fs6;
+    font-weight: 900;
+  }
+}

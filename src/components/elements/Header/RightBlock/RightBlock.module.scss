@@ -1,0 +1,17 @@
+@import '../../../../variables';
+
+.ContainerBlock {
+  display: flex;
+  gap: 2rem;
+
+  color: white;
+  font-size: $fs6;
+  img {
+    filter: grayscale(100%);
+    width: 1rem;
+  }
+}
+
+.AuthBlock {
+  width: 8rem;
+}

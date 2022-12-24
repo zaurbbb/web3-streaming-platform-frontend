@@ -43,8 +43,8 @@ a:focus, a:active {
   outline: none;
 }
 
-ol, ul {
-  list-style: none;
+ol, ul, li {
+  list-style-type: none !important;
 }
 
 blockquote, q {

@@ -1,0 +1,12 @@
+.ContainerBlock {
+  display: flex;
+  gap: 1rem;
+}
+.ContainerBlock a {
+  text-transform: uppercase;
+  color: white;
+  font-size: 0.694rem;
+  font-weight: 900;
+}
+
+/*# sourceMappingURL=Navbar.module.css.map */

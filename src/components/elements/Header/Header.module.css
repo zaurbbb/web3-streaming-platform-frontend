@@ -1,0 +1,21 @@
+.ContainerBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 0 0 3px #DF1F50;
+}
+
+.LogoBlock, .AuthBlock {
+  width: 10rem;
+}
+
+.AuthBlock {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  height: 1.6rem;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

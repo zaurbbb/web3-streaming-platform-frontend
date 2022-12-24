@@ -1,16 +1,27 @@
-import Header from './components/elements/Header/Header';
-import Footer from './components/elements/Footer/Footer';
-import { publicRoutes } from './router/routes';
 import {
     BrowserRouter,
     Route,
     Routes
 } from 'react-router-dom';
-import React from 'react';
+import {
+    createReactClient,
+    studioProvider,
+} from '@livepeer/react';
+import Header from './components/elements/Header/Header';
+import Footer from './components/elements/Footer/Footer';
+import { publicRoutes } from './router/routes';
+
+const livePeerClient = createReactClient({
+    provider: studioProvider({
+        apiKey: 'd717db73-99bc-49c2-ba40-e2cc146030f7',
+    }),
+});
+
 
 function App() {
     return (
     <BrowserRouter>
+        {/*<LivepeerConfig client={livePeerClient}>*/}
             <Header />
             <main>
                 <Routes>
@@ -25,6 +36,7 @@ function App() {
                 {/*<AppRouter />*/}
             </main>
             <Footer />
+        {/*</LivepeerConfig>*/}
     </BrowserRouter>
     );
 }
