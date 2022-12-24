@@ -10,6 +10,7 @@ import {
 import css from './ViewStreamPage.module.scss';
 import API from '../../../api';
 import ThreeDotsLoader from '../../ui/loaders/ThreeDotsLoader/ThreeDotsLoader';
+import { Button } from '@mui/material';
 
 const ViewStreamPage = () => {
     const { streamID } = useParams();
@@ -63,6 +64,14 @@ const ViewStreamPage = () => {
             <div>
                 <h2 className='secondary-light-color'>Description</h2>
                 <h3> {stream.streamDescription}</h3>
+            </div>
+            <div>
+                <Button
+                    variant='outlined'
+                    color='primary'
+                >
+                    Notify about inappropriate content
+                </Button>
             </div>
         </section>
     );
