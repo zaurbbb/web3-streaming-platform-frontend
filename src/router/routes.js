@@ -2,7 +2,7 @@ import CreateStreamPage from '../components/pages/CreateStreamPage/CreateStreamP
 import HomePage from '../components/pages/HomePage/HomePage';
 import ViewAllStreamsPage from '../components/elements/ViewStreams/ViewStreams';
 import ProfilePage from '../components/pages/ProfilePage/ProfilePage';
-import ViewStreamPage from "../components/pages/ViewStreamPage/ViewStreamPage";
+import ViewStreamPage from '../components/pages/ViewStreamPage/ViewStreamPage';
 
 export const privateRoutes = [
     { path: '/', component: <HomePage />, id: 1 },

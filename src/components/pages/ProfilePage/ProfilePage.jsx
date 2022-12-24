@@ -57,7 +57,7 @@ const ProfilePage = () => {
                 Your Balance: {userBalance} STN <STNIcon/>
             </h3>
             <h3>
-                Wallet Address: {isAddressVisible ? walletAddress : '***'}
+                Wallet Address: {isAddressVisible ? walletAddress : ''}
                 <Button
                     variant='outlined'
                     onClick={handleAddressVisible}

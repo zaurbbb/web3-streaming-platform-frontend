@@ -3,22 +3,21 @@ import {
     Alert,
     Snackbar
 } from "@mui/material";
-// import { FormattedMessage } from "react-intl";
 
-const SnackbarWindow = ({ openSnackbar, handleCloseSnackbar }) => {
+const SnackbarWindow = ({ openSnackbar, handleCloseSnackbar, text, severity, link }) => {
 
     return (
         <Snackbar
             open={openSnackbar}
             onClose={handleCloseSnackbar}
-            autoHideDuration={4000}
         >
             <Alert
                 onClose={handleCloseSnackbar}
-                severity="success"
+                severity={severity}
             >
-                one_name_copy_to_clipboard
-                {/*<FormattedMessage id='w.one_name_copy_to_clipboard' />*/}
+                <a href={link} target='_blank'>
+                    {text}
+                </a>
             </Alert>
         </Snackbar>
     );

@@ -9,6 +9,7 @@ import {
 import { Button } from '@mui/material';
 import API from '../../../api';
 import css from './CreateStreamPage.module.scss'
+import SnackbarWindow from '../../ui/windows/SnackbarWindow/SnackbarWindow';
 
 const CreateStreamPage = () => {
     const [streamName, setStreamName] = useState('');
@@ -38,6 +39,17 @@ const CreateStreamPage = () => {
             console.log(e);
         });
     }
+
+    const [openSnackbar, setOpenSnackbar] = useState(false);
+    const handleClickSnackbar = () => {
+        setOpenSnackbar(true);
+    };
+
+    const handleCloseSnackbar = (event, reason) => {
+        if (reason === 'clickaway') return;
+
+        setOpenSnackbar(false);
+    };
 
     return (
         <section className={css.ContainerBlock}>
@@ -76,6 +88,7 @@ const CreateStreamPage = () => {
                     <Button
                         onClick={() => {
                             createStream?.();
+                            handleClickSnackbar();
                         }}
                         disabled={isLoading || !createStream}
                         variant='outlined'
@@ -85,6 +98,10 @@ const CreateStreamPage = () => {
                     </Button>
                 )}
             </div>
+            <SnackbarWindow
+                openSnackbar={openSnackbar}
+                handleCloseSnackbar={handleCloseSnackbar}
+            />
         </section>
     )
 };

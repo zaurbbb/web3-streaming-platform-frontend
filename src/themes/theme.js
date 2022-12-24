@@ -40,6 +40,21 @@ export const theme = createTheme({
                 },
             },
         },
+        MuiAlert: {
+            styleOverrides: {
+                icon: {
+                    display: 'flex',
+                    alignItems: 'center',
+                },
+                message: {
+                    display: 'flex',
+                    alignItems: 'center',
+                    'a': {
+                        color: 'black',
+                    }
+                }
+            }
+        }
     },
     typography: {
         'fontFamily': `GilroyRegular, sans-serif`,
