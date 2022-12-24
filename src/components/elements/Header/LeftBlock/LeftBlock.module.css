@@ -2,6 +2,9 @@
   display: flex;
   gap: 1rem;
 }
+.ContainerBlock svg path {
+  fill: #7B7B83;
+}
 
 .LogoImg {
   width: 5rem;

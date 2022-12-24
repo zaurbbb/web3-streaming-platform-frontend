@@ -1,8 +1,14 @@
+@import '../../../../variables';
+
 .ContainerBlock {
   display: flex;
   gap: 1rem;
 
-  //width: 5rem;
+  svg {
+    path {
+      fill: $secondaryLight;
+    }
+  }
 }
 
 .LogoImg {

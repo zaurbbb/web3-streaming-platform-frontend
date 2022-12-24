@@ -1,0 +1,12 @@
+.ContainerBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.ContainerBlock input {
+  width: 20rem;
+  height: 2rem;
+  padding: 0 15px;
+}
+
+/*# sourceMappingURL=CreateStreamPage.module.css.map */

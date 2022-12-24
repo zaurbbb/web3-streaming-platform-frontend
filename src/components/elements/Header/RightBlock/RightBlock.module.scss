@@ -2,16 +2,39 @@
 
 .ContainerBlock {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 2rem;
 
   color: white;
   font-size: $fs6;
-  img {
-    filter: grayscale(100%);
-    width: 1rem;
+
+
+  a {
+    display: flex;
+    align-items: center;
   }
+
+  svg {
+    width: 1.4rem;
+    path {
+      fill: $secondaryLight;
+    }
+  }
+
+  img {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
 }
 
 .AuthBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
   width: 8rem;
+
+
 }

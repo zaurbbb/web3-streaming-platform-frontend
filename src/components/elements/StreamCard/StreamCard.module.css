@@ -1,0 +1,12 @@
+.CardBlock {
+  color: white;
+  width: 16rem;
+  border: 1px solid red;
+}
+.CardBlock img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/*# sourceMappingURL=StreamCard.module.css.map */

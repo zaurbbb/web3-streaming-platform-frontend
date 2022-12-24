@@ -60,7 +60,9 @@
 //}
 
 .SearchInput {
-  width: 14rem;
+  width: 100%;
+  min-width: 16rem;
   height: 1.6rem;
   padding: 0 15px;
+  color: white
 }

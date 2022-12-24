@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["LeftBlock.module.scss"],"names":[],"mappings":"AAAA;EACE;EACA;;;AAKF;EACE","file":"LeftBlock.module.css"}
+{"version":3,"sourceRoot":"","sources":["LeftBlock.module.scss","../../../../variables.scss"],"names":[],"mappings":"AAEA;EACE;EACA;;AAGE;EACE,MCOW;;;ADFjB;EACE","file":"LeftBlock.module.css"}

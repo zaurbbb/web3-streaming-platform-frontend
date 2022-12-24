@@ -1,0 +1,20 @@
+@import '../../../variables';
+
+.ContainerBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  h1 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}

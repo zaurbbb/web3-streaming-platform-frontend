@@ -4,38 +4,58 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  gap: 1rem;
+  
   padding: 0.5rem 0;
 
   background-color: $blackMain;
   color: white;
   overflow: visible;
+
   a {
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    width: 2.2rem;
+    width: 100%;
     height: 2.2rem;
+    svg {
+      path {
+        fill: $secondaryLight;
+      }
+    }
+  }
 }
+
+.ActiveLink {
   svg {
-    width: 1.8rem;
-}
-}
-.Content {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+    path {
+      fill: $primary!important;
+    }
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    right: 0;
+
+    width: 6px;
+    height: 2rem;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    background: $primary;
+  }
 }
 
-.Button {
-  height: 50px;
-  width: 2.8rem;
+.InActiveLink {
+  background-color: transparent
+}
 
-  border-radius: 3px;
-
-  background-color: #cc2463;
-  color: white;
+.IMG {
+  filter: hue-rotate(340deg) saturate(200%);
 }

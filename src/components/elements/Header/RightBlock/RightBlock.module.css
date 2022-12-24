@@ -1,15 +1,30 @@
 .ContainerBlock {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 2rem;
   color: white;
   font-size: 0.694rem;
 }
+.ContainerBlock a {
+  display: flex;
+  align-items: center;
+}
+.ContainerBlock svg {
+  width: 1.4rem;
+}
+.ContainerBlock svg path {
+  fill: #7B7B83;
+}
 .ContainerBlock img {
-  filter: grayscale(100%);
-  width: 1rem;
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .AuthBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   width: 8rem;
 }
 

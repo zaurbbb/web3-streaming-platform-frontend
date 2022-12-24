@@ -1,12 +1,14 @@
 import React from "react";
 
-import "./ThreeDotsLoader.sass"
+import "./ThreeDotsLoader.scss"
 
 const ThreeDotsLoader = () => {
     return (
-        <div className="loaderBlock">
-            <div className="loader">
-            </div>
+        <div className='lds-ellipsis'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     );
 }

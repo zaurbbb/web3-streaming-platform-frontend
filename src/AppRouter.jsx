@@ -1,21 +1,26 @@
-import React, { useContext } from 'react';
-import {Navigate, Route, Routes} from 'react-router-dom';
+import React from 'react';
+import {
+    Navigate,
+    Route,
+    Routes
+} from 'react-router-dom';
 import {
     privateRoutes,
     publicRoutes
 } from './router/routes';
-import { AuthContext } from './сontext';
 import ThreeDotsLoader from './components/ui/loaders/ThreeDotsLoader/ThreeDotsLoader';
 
 const AppRouter = () => {
-    const {isAuth, isLoading} = useContext(AuthContext);
 
-    if (isLoading) {
+    const user = localStorage.getItem('address');
+
+    if (!localStorage.getItem('address')) {
         return <ThreeDotsLoader/>
     }
+
     return (
         <Routes>
-            {isAuth
+            {user
                 ?
                 <>
                     {privateRoutes.map(route =>
@@ -25,11 +30,6 @@ const AppRouter = () => {
                             path={route.path}
                         />
                     )}
-
-                    <Route
-                        path='*'
-                        element={<Navigate to='/posts' replace/>}
-                    />
                 </>
                 :
                 <>
@@ -40,10 +40,6 @@ const AppRouter = () => {
                             path={route.path}
                         />
                     )}
-                    <Route
-                        path='*'
-                        element={<Navigate to='/login' replace/>}
-                    />
                 </>
             }
         </Routes>

@@ -1,16 +1,8 @@
-import React, {
-    useEffect,
-    useState
-} from 'react';
+import React, { useState } from 'react';
 
 import css from './Header.module.scss';
 
-import { Button } from '@mui/material';
-import { Link } from 'react-router-dom';
-
 import SnackbarWindow from '../../ui/windows/SnackbarWindow/SnackbarWindow';
-import MenuIcon from '@mui/icons-material/Menu';
-import NavbarLogo from '../../../assets/svg/NavbarLogo.svg'
 import Navbar from './Navbar/Navbar';
 import SearchBar from './SearchBar/SearchBar';
 import LeftBlock from './LeftBlock/LeftBlock';

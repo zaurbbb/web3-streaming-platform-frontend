@@ -1,10 +1,93 @@
-import React from 'react';
+import React, {
+    useMemo,
+    useState
+} from 'react';
+import {
+    Player,
+    useCreateStream
+} from '@livepeer/react';
+import { Button } from '@mui/material';
+import API from '../../../api';
+import css from './CreateStreamPage.module.scss'
 
 const CreateStreamPage = () => {
+    const [streamName, setStreamName] = useState('');
+    const [streamCategory, setStreamCategory] = useState('');
+    const [streamDescription, setStreamDescription] = useState('');
+    let count = 0;
+
+    const {
+              mutate: createStream,
+              data  : stream,
+              status,
+          } = useCreateStream(streamName ? { name: streamName } : null);
+
+    const isLoading = useMemo(() => status === 'loading', [status]);
+
+    if (stream && count < 1) {
+        count++;
+        API.post('/ipfs/uploadStreamData', {
+            streamName,
+            streamCategory,
+            streamDescription,
+            streamId     : stream.id,
+            authorAddress: localStorage.getItem('address')
+        }).then(res => {
+            console.log(res.data);
+        }).catch(e => {
+            console.log(e);
+        });
+    }
 
     return (
-        <div>create stream page</div>
-    );
+        <section className={css.ContainerBlock}>
+            {!stream ? <>
+                <input
+                    style={{ backgroundColor: 'white' }}
+                    type='text'
+                    placeholder='Stream name'
+                    onChange={(e) => setStreamName(e.target.value)}
+                />
+                <input
+                    style={{ backgroundColor: 'white' }}
+                    type='text'
+                    placeholder='Description'
+                    onChange={(e) => setStreamDescription(e.target.value)}
+                />
+                <input
+                    style={{ backgroundColor: 'white' }}
+                    type='text'
+                    placeholder='Category'
+                    onChange={(e) => setStreamCategory(e.target.value)}
+                />
+            </> : <h1>Stream name: {streamName} | Stream category: {streamCategory} <br/> Stream description: {streamDescription} </h1>}
+
+            {stream && <div>Stream Key: {stream.streamKey}</div>}
+            {stream?.playbackId && (
+                <Player
+                    title={stream?.name}
+                    playbackId={stream?.playbackId}
+                    autoPlay
+                    muted
+                />
+            )}
+
+            <div>
+                {!stream && (
+                    <Button
+                        style={{ backgroundColor: 'white' }}
+                        onClick={() => {
+                            createStream?.();
+                        }}
+                        disabled={isLoading || !createStream}
+                        variant='primary'
+                    >
+                        Create Stream
+                    </Button>
+                )}
+            </div>
+        </section>
+    )
 };
 
 export default CreateStreamPage;
