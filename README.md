@@ -7,9 +7,7 @@
 
 ## Description
 
-It's a Livestream App, including a DAO and an Incentive system.
-
-Live demo of the Front-End part: https://zaurbbb.github.io/damudocs-react-hackathon
+It's a Livestream App, including a DAO and an Incentive system
 
 *The technical task was provided by [BNB-Chain](https://www.bnbchain.org/en), during [Blockchain Hackathon](https://www.aitubnbchainhackathon.xyz/)*
 
