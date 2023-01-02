@@ -5,10 +5,12 @@ import { useRandomName } from '../../../hooks/useRandonName';
 import { ReactComponent as VisibleIcon } from '../../../assets/svg/VisibleIcon.svg';
 import { useRandomPoster } from '../../../hooks/useRandomPoster';
 import { Link } from 'react-router-dom';
+import { useRandomNumber } from '../../../hooks/useRandomNumber';
 
 const StreamCard = ({ streamName, streamCategory, streamId, streamDescription, authorAddress }) => {
     const randomName = useRandomName();
     const randomPoster = useRandomPoster();
+    const randomNumber = useRandomNumber();
 
     return (
         <Link to={`/viewStream/${streamId}`} className={css.CardBlock}>
@@ -26,7 +28,7 @@ const StreamCard = ({ streamName, streamCategory, streamId, streamDescription, a
                     <p>{randomName}</p>
                 </div>
                 <div className={css.WatchersInfo}>
-                    <VisibleIcon /> 123456
+                    <VisibleIcon /> {randomNumber}
                 </div>
             </div>
         </Link>

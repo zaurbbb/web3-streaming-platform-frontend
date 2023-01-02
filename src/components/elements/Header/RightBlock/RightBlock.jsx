@@ -76,7 +76,7 @@ const RightBlock = () => {
                 if (count >= 5) {
                     api.post('/nft/mintSoulBound', {
                         address: localStorage.getItem('address'),
-                        type: 'time'
+                        type   : 'time'
                     }).then(res => {
                         handleClickSnackbar();
                     }).catch(e => {
@@ -107,35 +107,40 @@ const RightBlock = () => {
 
     return (
         <div className={css.ContainerBlock}>
-            {isLoading ? <ThreeDotsLoader /> :
-                <Badge
-                    badgeContent={localStorage.getItem('time') ? Math.round(+localStorage.getItem('time')) : 0}
-                    color="primary"
-                    onClick={() => {
-                        handleClaim();
-                    }}
-                    style={{ cursor: 'pointer' }}
-                >
-                    <DoneIcon />
-                </Badge>}
-
-            <Link to='/createStream'>
-                <Badge>
-                    <PlusIcon />
-                </Badge>
-            </Link>
             {
-                userAccount ? <div>
-                    <span>{userAccount.substring(0, 5)}...{userAccount.substring(userAccount.length - 5)} </span>
-                </div> : <Link to='/login'>
-                    <Button
-                        variant='outlined'
-                        color='primary'
-                        onClick={() => connectWallet()}
-                    >
-                        Log in
-                    </Button>
-                </Link>
+                userAccount ?
+                    <>
+                        {isLoading ? <ThreeDotsLoader /> :
+                            <Badge
+                                badgeContent={localStorage.getItem('time') ? Math.round(+localStorage.getItem('time')) : 0}
+                                color="primary"
+                                onClick={() => {
+                                    handleClaim();
+                                }}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <DoneIcon />
+                            </Badge>
+                        }
+
+                        <Link to='/createStream'>
+                            <Badge>
+                                <PlusIcon />
+                            </Badge>
+                        </Link>
+                        <div>
+                            <span>{userAccount.substring(0, 5)}...{userAccount.substring(userAccount.length - 5)} </span>
+                        </div>
+                    </>
+                    : <Link to='/'>
+                        <Button
+                            variant='outlined'
+                            color='primary'
+                            onClick={() => connectWallet()}
+                        >
+                            Log in
+                        </Button>
+                    </Link>
             }
 
             {

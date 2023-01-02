@@ -13,9 +13,9 @@ const AppRouter = () => {
 
     const user = localStorage.getItem('address');
 
-    if (!localStorage.getItem('address')) {
-        return <ThreeDotsLoader/>
-    }
+    // if (!localStorage.getItem('address')) {
+    //     return <ThreeDotsLoader/>
+    // }
 
     return (
         <Routes>

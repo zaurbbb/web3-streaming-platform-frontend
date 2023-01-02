@@ -26,6 +26,7 @@ const ViewStreamPage = () => {
             try {
                 const res = await API.get('/ipfs/getStreams');
                 setStream(res.data.filter(item => item.streamId === streamID)[0]);
+                console.log(res.data);
             } catch (e) {
                 console.log(e)
             }
@@ -43,7 +44,7 @@ const ViewStreamPage = () => {
 
     }, []);
 
-    if (stream.length === 0) {
+    if (!stream) {
         return <ThreeDotsLoader />
     }
     return (

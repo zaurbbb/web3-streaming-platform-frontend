@@ -24,7 +24,6 @@ const ViewAllStreams = () => {
         fetchData().then();
     }, []);
 
-
     if (streams.length === 0) {
         return <ThreeDotsLoader/>
     }

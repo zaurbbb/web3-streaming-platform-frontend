@@ -3,19 +3,17 @@
 ![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![image](https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white)
 ![image](https://img.shields.io/badge/Scss-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-# React + SCSS + MUI template
+# Web3 Streaming Platform Frontend
 
 ## Description
 
-Description: –
-
-Live demo: —
+It's a Livestream App, including a DAO and an Incentive system.
 
 ## Features:
 
-- point1
-- point2
-- ...
+- Authorize with MetaMask account
+- Decentralized video streaming using livepeer.js
+- Claiming NFT tokens for activity on the platform 
 
 ## Getting Started
 
@@ -23,11 +21,11 @@ It's mandatory to install [NodeJS](https://nodejs.org/en/download/). After open 
 
 - Clone the latest version
 ```
- git clone https://github.com/zaurbbb/[repo-name]
+ git clone https://github.com/zaurbbb/web3-streaming-platform-frontend
 ```
 - Change directory to project's folder
 ```
- cd [repo-name]
+ cd web3-streaming-platform-frontend
 ```
 - Install dependencies
 ```
@@ -37,4 +35,4 @@ It's mandatory to install [NodeJS](https://nodejs.org/en/download/). After open 
 ```
  npm start
 ```
-Now, web-application is running on http://localhost:3000/ or another port that must be mentioned on the command line.
+Now, the web-application is running on http://localhost:3000/ or another port that must be mentioned on the command line.
